@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+<nav class="navbar bg-body-tertiary" style="padding: 0; margin: 0">
+  <div class="container-fluid" style="background-color: #A8DA99;" >
+      <h1>ToDoList</h1>
+          <div class="btn-group" role="group" aria-label="Button" style="padding: 100px">
+        <a href="/todolist"><input type="button" class="btn-check" name="list" id="list1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="list1">Список задач</label></a>
+              <a href="/add"><input type="button" class="btn-check" name="add" id="add1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="add1">Добавить задачи</label></a>
+              <a href="/"><input type="button" class="btn-check" name="home" id="home1" autocomplete="off">
+        <label class="btn btn-outline-primary" for="home1">На главную</label></a>
+    </div>
+  </div>
+</nav>
+<container class="container-list" style="max-width: 2000px; margin: auto;  height: 1000px;">
+<div class="p" style="margin-left: 100px;">
+    {% for todolist in todo %}
+    <p style="margin-left: 100px">{{ todolist.id }}</p>
+            <p>{{ todolist.created_at }}</p>
+    <h3>{{ todolist.description }}</h3>
+    <h6>{{ todolist.status }}</h6>
+    {% endfor %}
+</div>
+</container>
+</body>
+</html>
